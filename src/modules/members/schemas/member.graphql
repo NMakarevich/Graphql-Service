@@ -1,0 +1,5 @@
+type Member {
+    artist: Artist
+    instrument: String
+    years: [Int]
+}
