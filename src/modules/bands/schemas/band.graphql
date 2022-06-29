@@ -6,3 +6,8 @@ type Band {
     website: String
     genres: String
 }
+
+extend type Query {
+    bands: [Band]
+    band(id: ID!): Band
+}

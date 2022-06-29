@@ -9,3 +9,8 @@ type Artist {
     bands: [ID]
     instruments: String
 }
+
+type Query {
+    artists: [Artist]
+    artist(id: ID!): Artist
+}

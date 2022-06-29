@@ -1,0 +1,17 @@
+type JWT {
+    jwt: String!
+}
+
+type User {
+    id: ID!
+    firstName: String
+    secondName: String
+    middleName: String
+    password: String!
+    email: String!
+}
+
+extend type Query {
+    user(id: ID!): User
+    jwt(email: String!, password: String!): JWT
+}

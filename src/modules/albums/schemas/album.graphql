@@ -1,5 +1,5 @@
 type Album {
-    id: ID
+    id: ID!
     name: String
     released: Int
     artists: [Artist]
@@ -7,4 +7,9 @@ type Album {
     tracks: [Track]
     genres: [Genre]
     image: String
+}
+
+extend type Query {
+    albums: [Album]
+    album(id: ID!): Album
 }

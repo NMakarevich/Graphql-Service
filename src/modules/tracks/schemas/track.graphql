@@ -7,3 +7,8 @@ type Track {
     released: Int
     genres: [Genre]
 }
+
+extend type Query {
+    tracks: [Track]
+    track(id: ID!): Track
+}
