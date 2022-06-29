@@ -9,7 +9,20 @@ type Album {
     image: String
 }
 
+type Albums {
+    items: [Album]
+    limit: Int,
+    offset: Int,
+    total: Int
+}
+
 extend type Query {
-    albums: [Album]
+    albums(limit: Int, offset: Int): Albums
     album(id: ID!): Album
+}
+
+type Mutation {
+    createAlbum(name: String!, released: Int, artistsIds: [String], bandsIds: [String], trackIds: [String], genresIds: [String],): Album
+    updateAlbum(id: ID!, name: String, released: Int, artistsIds: [String], bandsIds: [String], tracksIds: [String], genresIds: [String]): Album
+    deleteAlbum(id: ID!): DEL
 }
