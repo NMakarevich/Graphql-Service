@@ -16,12 +16,12 @@ type Tracks {
 }
 
 extend type Query {
-    tracks: Tracks
+    tracks(limit: Int, offset: Int): Tracks
     track(id: ID!): Track
 }
 
 extend type Mutation {
-    createTrack(title: String, artistsIds: [String], bandsIds: [String], duration: Int, released: Int, genresIds: [String]): Track
+    createTrack(title: String, artistsIds: [ID], bandsIds: [ID], duration: Int, released: Int, genresIds: [ID]): Track
     deleteTrack(id: ID!): DEL
-    updateTrack(id: ID!, title: String, albumsIds: [String], bandsIds: [String], duration: Int, released: Int, genresIds: [String]): Track
+    updateTrack(id: ID!, title: String, albumsIds: [ID], bandsIds: [ID], duration: Int, released: Int, genresIds: [ID]): Track
 }

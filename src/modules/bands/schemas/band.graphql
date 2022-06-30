@@ -32,7 +32,7 @@ extend type Query {
 }
 
 extend type Mutation {
-    createBand(name: String!, origin: String, website: String, genresIds: [String]): Band
+    createBand(name: String!, origin: String, website: String, genresIds: [ID]): Band
     deleteBand(id: ID!): DEL
     updateBand(id: ID!, members: [MemberI]): Band
 }
